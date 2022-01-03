@@ -1,0 +1,311 @@
+
+Comments in html:
+*****************
+<h1>This is a main title!</h1>
+    <!-- This is a comment - the browser ignores it. It won't show up on the user's screen -->
+
+Comments in Css:
+****************
+p {
+    font-family: sans-serif; /* Switch to sans-serif instead of serif */
+}
+
+To keep our code more short we store the css styles seperately in a different file,
+and then we make a relation between the css file and the html file.
+e.g:
+<html>
+<head>
+<link href="name of the cssfile.css" rel="stylesheet">// the link will stablish connection between the two files 
+but it wont create a clickable link in the page instead it will use the styles inthe html page.
+</head>
+</html>
+
+block elements:
+<p></p>
+<h1></h1>
+.
+.
+.
+.
+<h6></h6>
+<div></div>  is a block element it accepts nesting elements in it 
+example:
+*********
+<div>
+        <p>Hello</p>
+        <div>hi</div>
+</div>
+but paragraph does not accept nesting elements inside it
+
+
+inline elements:
+**************
+<span></span>
+<a></a>
+<button></button>
+<img>
+
+to add padding and of top and bottom style like this to the inline element:
+display:inline-block;
+
+Document Object Model:(DOM)
+************************
+it keeps track of what ever you render your web page and changes it into proper html page.
+
+HTML and XHTML:
+****************
+html is less stricter than XHTML  
+XHTM => <br />
+XHTM => <hr />
+XHTML <input type='text' disabled>
+HTML=> <br>
+HTML=> <hr>
+HTML <input type='text' disabled>
+
+
+when you connect css file or java script file to the html the browser automatically requests the files starting 
+from html and then the broser will request the rest of the files.
+Class selector:
+************
+it affects the elements that are called and given the class attr.
+you can add multiple class selectors in one element.
+e:g
+<style>
+       .font-color{
+            color='red';
+}
+.bg-blue{
+    background-color='blue';
+}
+</style>
+<body>
+       <p class='font-color' bg-blue>Hello hi how are you</p>
+</body>
+group selector:
+*************
+//this will effect all the paragraphs of the page.
+p{
+color: red;
+font-size: 100px;
+font-family: Sans-serif;      
+}
+
+#id selector:
+***********
+//it will affect only the elements we give the id.
+id selector should be unique.
+To style html elements we also use id selector:
+e.g:
+#qr {
+color:rgb(178,89,20);
+font-size: 20 px;
+font-weight: bold;
+}
+inside the html use the id inside the element you want to change its style.
+
+<p id="qr">Hi good morning</p>
+
+psuedo selectors:
+***************
+e,g:
+a:hover{
+text-decoration:underline;
+}
+to make the size pxel is the best way because the pixel will make the same size to all divices no matter if it has bad resolution or good resolution so always make the size in pixel because its absolute to all divices.
+
+To change and choose the font of your choice go and visit fonst.google.com And then search the font you want and copy the link then pass it to head section of the html.
+
+1) No formatting
+
+<html><head><title>A test </title><style>h1{color:red}</style></head><body><h1>Hi there!</h1><p>This is some text...</p></body></html>
+2) Formatting with line breaks and indentation (i.e. lots of "whitespace")
+
+<html>
+  <head>
+    <title>A test </title>
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hi there!</h1>
+    <p>This is some text...</p>
+  </body>
+</html>
+By default, the browser (typically - there are few exceptions, ) ignores line breaks and indentation in your HTML and CSS code. That's why, as a visitor of the site, you will see the same result for both snippets above (No formatting and formatting).
+
+Since the result is the same, but we as a developer are a human, we typically go for the second approach - using lots of indentation and line breaks to structure and organize our code.
+
+How To Output Special Characters In HTML
+************************************
+When writing HTML code, characters like "<" and ">" obviously have a special meaning: They mark the beginning and ending of HTML tags.
+
+But what if you would want to output the "<" and ">" characters or a complete HTML tag as text on your website? Like on this site here (yes, the site on which you currently are). You can read the code snippets above just fine - because they are output as plain text (they are NOT interpreted as HTML by the browser that loaded this page).
+
+=>There are two main ways of achieving this:
+
+You can use the special <pre>...</pre> tags (for "preformatted text") - these tags wrap any text (that may include HTML code) and "tell the browser" to output it as plain text (i.e. NOT interpret it as HTML code). When using <pre>, whitespace is also preserved and NOT ignored (as it normally would be)
+
+Alternatively, if you simply want to output the "<" character (e.g. in some math formula that should be shown on your page), you can use some special "shortcuts" (so-called "HTML entities") in your HTML code:
+
+E.g. if you write &gt; in your HTML code, the browser will output the ">" (greater than) symbol
+
+&lt; => "<" (lower than)
+e.g:
+<pre> < is openining tag and > is closing tag and this is used as paragraph</pre>
+          <br>
+          <h3>4 is &gt 3</h3>
+          <h3>4 is &lt 3</h3>
+
+To Add image to your page:
+<img src="the pasth of the image.jpg" alt="to show if loading the img is not ok">  // it has no closing tag its selv closed tag
+to style the image inside the css file:
+by using selector:
+
+img{
+width: 200;
+height: 200px;
+border-radius: 100px;// to round the image
+}
+and to center it we use the <body> tag to center it because the image is a content of the body. as the image doesnot contain any content to center.
+the elements that contain contents to center we can use text-align: "center"; e.g <p text-align="center">hello</p> the element p has content hello so it makes its content center. but in this case img doesnot contain any content so to center it we use body to center it.
+e.g:  body{
+text-align: center;
+}
+
+Meta Elements or Data: are the elements that in the head tag and dont appear on the webpage.
+
+Lists:
+1)ordered List
+2)Unordered List
+
+1)ordered List: 1)Milk
+                           2)potato
+
+2)Unordered List : . Pepsi
+                                . Coca
+to change the style we use [list-style attribute] .
+
+
+# Inheritance : some properties are applied to the descendants of the parent
+# Cascading means: applying multiple rules to the same element, the latest applied rule wins.
+
+# Specificity concept means: the more selected element wins the less specific element:
+e.g li{
+list-style:none;    // li is more specific then ol, so it wins.
+}
+ol{
+list-style:square;
+}
+
+
+<kbd> ctrl</kbd> + <kbd> c</kbd> it is used to present the keyboard short cut functions. 
+
+content padding , merging and adding borders:
+*****************************************
+
+h1{
+marging: 12px 22px [means 12px top and bottom 22px right and left]
+padding : 25px 54px [means 25px top and bottom 54px right and left]
+border: 1px solid red
+}
+marging Collapsing:
+******************
+occurs only in vertical margins and only between block elements.
+The block element that has the bigger size wins, ignoring the one that has smaller margin size.
+inline blocks isnot affected even if its declared as => display:inline-block
+
+box-shadow : 4px 2px 20px rgb(0,0,0,1):
+4px for x-axis, 2px for y-axis, blur-rdius for 20px rgb color (0,0,0  1 for the opacity of the color) 
+
+
+non-semantic block element: <div>
+
+replaced inline element is <img> and non replaced inline element is <a>
+
+using negetive margin will take the element agaist the side it came from.
+
+margin-top:  -34px; it will go to the top -34 pxels
+
+
+Generating favicon:
+****************
+1) use any website that generates favicon
+2) Drag and drop the image or the icon you want to use.
+3) Unzip the file you have downloaded and copy it to you project folder.
+4) use this style in head tag <link rel:'icon'  href:'favicon.png' type:'image/png'>
+
+
+What is version Controll/management ?
+**********************************
+ Efficient control and tracking of code changes overtime.
+
+what is git:
+  -> Local tool installed on your computer.
+  -> Version control for web development projects.
+  -> Organized in repositories.
+
+what is Github:
+
+  -> Seperate tool from git although they share the name but different.
+  -> Cloud hosting provider for git repositories.
+  -> Collaboration and contribution to web development projects between more people.
+  -> The world's largest web development platform.
+
+
+Command Line Interface :
+  is the fastest and most common way to effciently work with Git and Github 
+
+cmd commands:
+****************
+creating folder use -> mkdir folder name
+creating file content use ->echo hi how are you >test.txt
+to see the content use -> type test.txt
+to delete the content in the folder use -> del foldername
+to delete folder use -> rmdir foldername
+
+Master/branch in git: is the core location of all our code snapshots of all our commits.
+
+Tracking files in git use: git add git-lessons.txt
+
+To create a snapshot or commit use this:  git -m "added git-lessons.txt"
+To change user name use this code: git config --global --edit user.name "Mohamed qadar"
+To change email use this code: git config --global --edit user.email "mohameqadar1918@gmail.com"
+
+To check a commit use this -> git log
+to change the branch name use -> git branch -m main    (main) is the name that you gave the branch.
+To switch between branches use -> git checkout -b neBranchname 
+
+To merge two branches use -> git merge feature (feature) is the branch name that includes the data should be merged in the other branch
+
+To delete a file from the branch use -> cd deleting-data (this the path of the file to be deleted) 
+                                                                -> git rm file2.txt     (this is the file to be deleted)
+ 
+To return to the previous commit or to get back deleted commit -> git reset --hard HEAD~1
+
+To delete branch use -> git branch -D feature   (feature) is the  name of the branch that you going to delete.
+
+To get rid of unstaged commit use -> git checkout --.
+
+To get rid of staged commit use -> git reset git-lessons.txt.    (git-lessons.txt) is the file name that you reseting.
+
+git is a local environment.
+
+
+
+Github:
+******
+Why use Github?
+  Github lets us to store our data locally and also in the cloud Storage thus allowing us to access the code that is in another computer.
+
+
+To add remote repository from git into the github use:
+   git remote add origin https://github.com/Mohamedqadar123/web-dev-mo.git       // the http is the link from the git hub. then add this code
+   git push origin main     // To update changes from the local git to the remote github
+
+To clone  from github to git use:
+       git clone https://github.com/Mohamedqadar123/web-dev-mo.git
+  
+To update changes from the remote git hub to the local git use : git pull
